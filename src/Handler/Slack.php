@@ -20,14 +20,17 @@ class Slack extends BaseHandler {
      *
      * @var string
      */
-    private $webhook = 'https://hooks.slack.com/services/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';
+    private $webhook = '';
 
     /**
      * Slack constructor
+     *
+     * @param string $webhook Slack Webhook URL
      */
-    public function __construct()
+    public function __construct($webhook)
     {
         $this->client = new Client();
+        $this->webhook = $webhook;
     }
 
     /**

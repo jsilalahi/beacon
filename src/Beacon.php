@@ -19,7 +19,7 @@ class Beacon {
      *
      * @param BaseHandler $handler
      */
-    public function __construct(BaseHandler $handler)
+    public function __construct(BaseHandler $handler = null)
     {
         $this->handler = $handler;
     }
@@ -31,6 +31,11 @@ class Beacon {
      */
     public function report(Exception $e)
     {
+        // No specified handler, ignore the error
+        if( ! $this->handler) {
+            return;
+        }
+
         $this->handler->sendReport($e);
     }
 }
