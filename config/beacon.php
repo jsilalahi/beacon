@@ -10,6 +10,7 @@ return [
     | This option controls the default Beacon "handler". You can edit
     | the configuration in .env file to change Beacon handler.
     |
+    | The available handler are "none" and "slack"
     */
 
     'defaults' => [
@@ -26,7 +27,7 @@ return [
     */
 
     'slack' => [
-        'webhook' => env('BEACON_SLACK_WEBHOOK', 'https://hooks.slack.com/services/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')
+        'webhook' => env('BEACON_SLACK_WEBHOOK', '')
     ]
 
 ];

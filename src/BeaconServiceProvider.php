@@ -45,10 +45,6 @@ class BeaconServiceProvider extends ServiceProvider {
 
             // More handler coming...
 
-            if( ! $handler) {
-                throw new InvalidHandlerException('Could not found specified handler for Beacon');
-            }
-
             return new Beacon($handler);
         });
     }

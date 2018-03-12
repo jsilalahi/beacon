@@ -1,5 +1,5 @@
-# Beacon
-
+# :loudspeaker: Beacon
+Real-time error reporting for developers. We should catch errors before users do. 
 
 ## Install
 Require this package with composer. It is recommended to only require the package for development.
@@ -8,8 +8,11 @@ Require this package with composer. It is recommended to only require the packag
 composer require dyned/beacon
 ```
 
-And then you need to copy config from Beacon's default config to your projects config. 
-
+And then you need to copy config from Beacon's default config to your projects config 
+```
+cp vendor/dyned/beacon/config/beacon.php ./config/beacon.php
+```
+You can add `BEACON_HANDLER` to specified report handler for Beacon. Refer to Beacon's config file to some insight. 
 
 Register Beacon service provider to project's `bootstrap/app.php` file.
 ```php
@@ -21,7 +24,7 @@ To catch error from project's add Beacon Facade to `app/Exceptions/Handler.php` 
 use DynEd\Beacon\Facades\Beacon;
 
 ```
-And then add this code to report method:
+And then add this code to "report" method:
 ```php
 Beacon::report($e);
 ``` 
@@ -35,3 +38,5 @@ public function report(Exception $e)
     parent::report($e);
 }
 ```
+
+That's it. When an exception occur, you'll received notifications real time.
