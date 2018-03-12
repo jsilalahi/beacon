@@ -1,7 +1,7 @@
 # :loudspeaker: Beacon
 Real-time error reporting for engineering team.
 
-Imagine that your application in production and customers using it. Sometimes, an runtime exception is occur by users. And engineering team did not know it happens to your customers. Your customer sad.
+Imagine that your application in production and customers using it. Sometimes, an runtime exception is occur by users. And engineering team did not know it happens to your customers, until a ticket is raised.
 
 Beacon can help engineering team to catch this runtime error and notify them. We should catch errors before users do.
 
