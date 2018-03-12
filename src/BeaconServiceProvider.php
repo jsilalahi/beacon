@@ -14,7 +14,7 @@ class BeaconServiceProvider extends ServiceProvider {
     {
         $this->app->singleton('DynEd\Beacon\Beacon', function ($app) {
 
-            // TODO: Extract handler from config
+            // TODO: extracting config
 
             return new Beacon(
                 new Slack()
