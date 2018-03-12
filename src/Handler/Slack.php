@@ -2,6 +2,7 @@
 
 namespace DynEd\Beacon\Handler;
 
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Exception;
 
@@ -44,7 +45,24 @@ class Slack extends BaseHandler {
                 'Accept'     => 'application/json',
             ],
             'json'    => [
-                'text' => $e->getMessage()
+                'attachments' => [
+                    [
+                        'color' => '#e74c3c',
+                        'pretext' => $e->getTraceAsString(),
+                        'author_name' => $e->getFile(),
+                        'title' => $e->getLine(),
+                        'text' => $e->getMessage(),
+                        'fields' => [
+                            [
+                                'title' => 'Priority',
+                                'value' => 'High',
+                                'short' => 'true'
+                            ]
+                        ],
+                        'footer' => 'Beacon',
+                        'ts' => Carbon::now()->timestamp
+                    ]
+                ]
             ],
         ]);
     }
