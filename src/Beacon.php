@@ -31,7 +31,6 @@ class Beacon {
      */
     public function report(Exception $e)
     {
-        // No specified handler, ignore the error
         if( ! $this->handler) {
             return;
         }

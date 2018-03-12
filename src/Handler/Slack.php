@@ -16,7 +16,6 @@ class Slack extends BaseHandler {
 
     /**
      * Slack webhook URL
-     * TODO: extract to config
      *
      * @var string
      */
