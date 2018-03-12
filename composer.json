@@ -1,0 +1,22 @@
+{
+    "name": "dyned/beacon",
+    "description": "Real-time error monitoring, alerting, and logging for developers",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jogi Silalahi",
+            "email": "jsilalahi@dyned.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "^5.6",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DynEd\\Beacon\\": "src/"
+        }
+    }
+}
